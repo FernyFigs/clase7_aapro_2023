@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  margin: 8px;
+}
+
+.ej {
+  text-align: center;
+  font: bold;
+  font-style: unset;
+  font-weight: 100;
+  font-size: 0.7rem;
+  color: rgb(90, 0, 12);
+}
+
+/*cajas (cuadriculas)*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.box {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.uno {
+  background-color: rgb(88, 12, 12);
+}
+
+.dos {
+  background-color: rgb(12, 88, 44);
+}
+
+.tres {
+  background-color: rgb(77, 74, 102);
+}
+
+.cuatro {
+  background-color: rgb(213, 226, 29);
+}
+
+.cinco {
+  background-color: rgb(187, 67, 147);
+}
+
+.seis {
+  background-color: rgb(226, 70, 9);
+}
+
+.siete {
+  background-color: rgb(27, 211, 3);
+}
+
+.ocho {
+  background-color: rgb(236, 11, 11);
+}
+
+.nueve {
+  background-color: rgb(0, 51, 145);
+}
+
+/* para definir las variables de colores */
+
+.uno {
+  background-color: var(--color-1);
+}
+.dos {
+  background-color: var(--color-2);
+}
+.tres {
+  background-color: var(--color-3);
+}
+.cuatro {
+  background-color: var(--color-4);
+}
+.cinco {
+  background-color: var(--color-5);
+}
+.seis {
+  background-color: var(--color-6);
+}
+.siete {
+  background-color: var(--color-7);
+}
+.ocho {
+  background-color: var(--color-8);
+}
+.nueve {
+  background-color: var(--color-9);
+}
+
+:root {
+  --color-1: rgb(236, 11, 11);
+  --color-2: rgb(0, 51, 145);
+  --color-3: rgb(213, 226, 29);
+  --color-4: rgb(226, 70, 9);
+  --color-5: rgb(12, 88, 44);
+  --color-6: rgb(88, 12, 12);
+  --color-7: rgb(77, 74, 102);
+  --color-8: rgb(187, 67, 147);
+  --color-9: rgb(27, 211, 3);
+}
+
+/* media queries*/
+
+@media (max-width: 320px) {
+  .grid-container {
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .cuatro,
+  .cinco,
+  .seis,
+  .siete,
+  .ocho,
+  .nueve {
+    display: none;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+
+  .siete,
+  .ocho,
+  .nueve {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .grid-container {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+}
